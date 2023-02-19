@@ -496,6 +496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1091154596}
   - component: {fileID: 1091154598}
+  - component: {fileID: 1091154599}
   - component: {fileID: 1091154597}
   m_Layer: 5
   m_Name: Health
@@ -587,6 +588,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8258e11330c6d4a12921647b61e287e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthSlider: {fileID: 1091154597}
+--- !u!114 &1091154599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091154595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ecb4bf2ce8a4d668abca4b8bca965c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _healthSlider: {fileID: 1091154597}
