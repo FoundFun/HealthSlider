@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChangeHealth : MonoBehaviour
+public class ButtonController : MonoBehaviour
 {
     [SerializeField] private Health _health;
     [SerializeField] private Button _changedButton;
