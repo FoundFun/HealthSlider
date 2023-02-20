@@ -1,25 +1,38 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private Slider _healthSlider;
+    public UnityAction<float, float> OnChanged;
+
+    private const float _maxValue = 1;
 
     private float _maxDelta = 0.1f;
+    private float _step = 0.1f;
     private float _target;
-
-    public float MaxDelta => _maxDelta;
-    public float Target => _target;
 
     private void Start()
     {
-        _target = _healthSlider.value;
+        _target = _maxValue;
+        OnChanged?.Invoke(_target, _maxDelta);
     }
 
-    public void Changed(int polarity)
+    public void TakeDamage()
     {
-        float step = 0.1f;
+        if (_target > 0)
+        {
+            _target -= _step;
+            OnChanged?.Invoke(_target, _maxDelta);
+        }
+    }
 
-        _target = _healthSlider.value + step * polarity;
+    public void TakeHealth()
+    {
+        if (_target < _maxValue)
+        {
+            _target += _step;
+            OnChanged?.Invoke(_target, _maxDelta);
+        }
     }
 }
